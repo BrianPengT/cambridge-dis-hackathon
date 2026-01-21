@@ -2,9 +2,9 @@
 <Company introduction goes here>
 
 ## Contents
-[Challenge](#challenge)
-[Repository Structure](repository-structure)
-[API Keys](#api-keys)
+- [Challenge](#challenge)
+- [Repository Structure](repository-structure)
+- [API Keys](#api-keys)
 
 ## Challenge
 <Task instructions go here>
