@@ -7,9 +7,9 @@ This is a fast, hands-on challenge focused on reasoning, disagreement, and trust
 
 ## Contents
 [Challenge](#challenge)\
-[Judging Criteria](#judging-criteria)\
-[Important Question](#important-question)\
-[Possible Extension Directions](#possible-extension-directions)\
+[Judging Criteria](#-judging-criteria)\
+[Important Question](#-important-question)\
+[Possible Extension Directions](#-possible-extension-directions)\
 [Repository Structure](#repository-structure)\
 [Environment Setup](#environment-setup)\
 [API Keys](#api-keys)
