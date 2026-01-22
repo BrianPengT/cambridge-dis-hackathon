@@ -30,32 +30,42 @@ This is harder than it sounds. Mutations can happen in many ways, including but 
 Most cases are borderline by design.
 People can disagree on whether the meaning has changed.
 
-#### What Counts as a “Mutation”?
--Shifts in certainty or commitment
--Numerical rounding or threshold changes
--Scope or population drift
--Causality vs correlation confusion
--Changes in tone, strength, or implication
--Missing qualifiers or conditions
+### What Counts as a “Mutation”?
+
+Mutations can be subtle, including:
+
+- Shifts in certainty or commitment  
+- Numerical rounding or threshold changes  
+- Scope or population drift  
+- Causality vs. correlation confusion  
+- Changes in tone, strength, or implication  
+- Missing qualifiers or conditions  
+
+Most cases are borderline by design.  
+Reasonable people often disagree.
+
 
 There is no single ground truth.
 Your agentic jury must reason — not just classify.
 ---
 
-### ⚖️ Build an AI Jury
+## ⚖️ Build an AI Jury
 
-You will design a **multi-agent system** - an *AI jury*.
+You will design a **multi-agent system** — an AI jury.
+
 A valid jury:
--Has multiple agents with distinct roles
--Allows agents to analyze, disagree, and refine
 
-and it produces: 
+- Has multiple agents with **distinct roles**
+- Allows agents to **analyze, disagree, and refine**
 
-- a verdict  
-- an explanation
-- a signal of uncertainty
-  
+It must produce:
+
+- A verdict  
+- An explanation  
+- A signal of uncertainty  
+
 🚫 A single LLM call in a loop is not sufficient.
+
 
 This is not about being **“right at all costs.”**  It is about reasoning **transparently and responsibly** to reach the verdict. 
 
@@ -86,18 +96,19 @@ Example valid subsets
 Use these categories strategically.
 
 ---
-### 🏁 Expected Output
+## 🏁 Expected Output
 
-By the end of the hackathon, your team should be able to:
+By the end of the hackathon, your team must be able to:
 
-- Demo a working AI jury built using multiple agents
-- Show how agents reason, including where they agree or disagree
+- Demo a working AI jury built using multiple agents  
+- Show how agents reason, including where they agree or disagree  
 - Evaluate up to 5 (fact, claim) pairs, producing for each:
-  - A final verdict
-  - A concise, human-readable explanation
-- Demonstrate that the approach generalizes beyond the presented examples
+  - A final verdict  
+  - A concise, human-readable explanation  
+- Demonstrate that the approach generalizes beyond the presented examples  
   (i.e., it is not hard-coded to specific cases)
-- Explicitly communicate uncertainty whenever the evidence or agent reasoning is inconclusive
+- Explicitly communicate uncertainty whenever the evidence or agent reasoning is inconclusive  
+
 
 
 ### Demos can be:
@@ -126,19 +137,19 @@ If it can’t be explained in 5 minutes, it’s probably too complex.
 
 Projects will be judged on:
 
-#🧠 Agent Design (30%)
+### 🧠 Agent Design (30%)
 - Clear, purposeful agent roles
 - Meaningful interaction (not just chaining)
 - Evidence of added value vs single-agent baseline
-#🧾 Reasoning & Explanation (30%)
+###🧾 Reasoning & Explanation (30%)
 - Clear, honest explanations
 - Explicit handling of uncertainty
 - Insight into why a case is hard
-#🔍 Data Understanding (20%)
+###🔍 Data Understanding (20%)
 - Thoughtful subset selection
 - Correct identification of mutation types
 - Awareness of ambiguity
-#🎤 Demo Clarity (20%)
+###🎤 Demo Clarity (20%)
 - Clear structure
 - Easy to follow
 - Teaches the judges something
