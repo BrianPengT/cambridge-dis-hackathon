@@ -95,7 +95,7 @@ Example valid subsets
 - Ambiguity level
 - High-ambiguity subset
   
-Use these categories strategically.
+Use these categories strategically. The dataset can be accessed [here](HackathonData.tsv)
 
 ---
 ### 🏁 Expected Output
