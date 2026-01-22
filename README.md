@@ -9,7 +9,7 @@ This is a fast, hands-on challenge focused on reasoning, disagreement, and trust
 [Challenge](#challenge)\
 [Judging Criteria](#judging-criteria)\
 [Important Question](#important-question)\
-[Extension Directions](#extension-directions)\
+[Possible Extension Directions](#possible-extension-directions)\
 [Repository Structure](#repository-structure)\
 [Environment Setup](#environment-setup)\
 [API Keys](#api-keys)
@@ -66,7 +66,7 @@ By the end of the hackathon, your team should be able to:
 
 ---
 
-## Judging criteria 🏆 
+## 🏆 Judging criteria 
 
 Projects will be judged on:
 
@@ -85,7 +85,7 @@ We care more about **good reasoning** than perfect answers.
 
 ---
 
-## Important Question 🧠
+## 🧠 Important Question
 
 During your demo, be prepared to answer:
 
@@ -95,7 +95,7 @@ There is no “correct” answer — **thoughtful reflections are highly valued*
 
 ---
 
-## Extension Directions 🚀 
+## 🚀 Possible Extension Direction
 
 Beyond defining agent roles, one way to extend your jury’s capabilities is by giving agents access to **tools** — either by creating simple custom tools or by integrating existing ones.
 
