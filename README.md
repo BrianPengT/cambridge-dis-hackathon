@@ -93,10 +93,12 @@ By the end of the hackathon, your team should be able to:
 - Demo a working AI jury built using multiple agents
 - Show how agents reason, including where they agree or disagree
 - Evaluate up to 5 (fact, claim) pairs, producing for each:
-        - a final verdict
-        - a concise, human-readable explanation
-        - Demonstrate that the approach generalizes beyond the presented examples (i.e., it is not hard-coded to specific cases)
-        - Explicitly communicate uncertainty whenever the evidence or agent reasoning is inconclusive
+  - A final verdict
+  - A concise, human-readable explanation
+- Demonstrate that the approach generalizes beyond the presented examples
+  (i.e., it is not hard-coded to specific cases)
+- Explicitly communicate uncertainty whenever the evidence or agent reasoning is inconclusive
+
 
 ### Demos can be:
 - CLI output  
