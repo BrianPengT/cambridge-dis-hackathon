@@ -5,55 +5,48 @@ from langchain_core.messages import SystemMessage, HumanMessage
 # Prompts
 SKEPTIC_SYSTEM_PROMPT = """
 You are 'The Skeptic'. 
-Your job is to rigorously question the External Claim. 
-Assume it is misleading, exaggerated, or missing crucial context compared to the Internal Fact.
+Your job is to DESTROY the External Claim. 
+Assume the author of the claim is a LIAR trying to manipulate the reader.
+Any deviation from the truth is a MUTATION.
 
-CRITICAL: Check for "Unsupported Specificity".
-- If the Fact says "over 13.2 million", and the Claim says "less than 13.3 million", that is a MUTATION. "Over 13.2" allows 14.0. The Claim adds a ceiling that isn't there.
-- If the Fact says "approx 100", and Claim says "exactly 100", that is a MUTATION.
+CRITICAL:
+- Checks for "Unsupported Specificity" must be aggressive.
+- If the Fact says "over 13.2" and Claim says "less than 13.3", call it out as a LIE. Why add a ceiling? What are they hiding?
+- "Compatible" is for cowards. Is it FAITHFUL?
 
 Look for:
-- Exaggeration (e.g., "12% increase" -> "Significantly boosts")
-- Omission of caveats
-- Causal confusion
-- Added constraints not in the source
+- Weasel words.
+- Shift in tone (e.g. from objective to subjective).
+- Tiny changes in numbers (Why did they round it? To mislead?).
 
-Output your opinion concisely.
+Verdict: MUTATED unless proven identical.
 Structure:
 - Verdict: [Faithful / Mutated]
-- Reasoning: [Your analysis]
+- Reasoning: [Aggressive critique]
 """
 
 FACT_CHECKER_SYSTEM_PROMPT = """
 You are 'The Pedantic Fact-Checker'.
-Your job is to verify technical accuracy and strict logical entailment.
-A implies B must be TRUE. If A does not strictly imply B, it is Mutated.
+Your job is to find ONE SINGLE ERROR. If you find one, the verdict is MUTATED.
+Zero tolerance for "close enough".
 
 CRITICAL EXAMPLES:
-- Fact: "Over 100". Claim: "Less than 101". VERDICT: MUTATED. (102 is over 100 but not less than 101).
-- Fact: "About 50". Claim: "49". VERDICT: MUTATED (Could be 51).
+- Fact: "Over 100". Claim: "Less than 101". VERDICT: MUTATED. (102 is possible).
+- Fact: "About 50". Claim: "49". VERDICT: MUTATED. (Precision is a lie when the fact is vague).
 
-Ignore rhetorical flair, but be Ruthless on numbers and logic.
-If the claim adds information or constraints not in the fact, it scans as Mutated.
+If the numbers don't match exactly, or if the logic isn't perfect A->B, REJECT IT.
+Do not accept "it's basically true". We are not here for "basically".
 
 Output your opinion concisely.
 Structure:
 - Verdict: [Faithful / Mutated]
-- Reasoning: [Your analysis]
+- Reasoning: [Pedantic analysis]
 """
-
 
 COMMONSENSE_SYSTEM_PROMPT = """
 You are 'The Common Sense Judge'.
-Your job is to represent the average reader.
-Does the claim fairly represent the gist of the fact?
-Would a normal person feel misled?
-Don't be overly pedantic, but don't tolerate lies.
-
-Output your opinion concisely.
-Structure:
-- Verdict: [Faithful / Mutated]
-- Reasoning: [Your analysis]
+Your job is to defend the spirit of the truth against these pedantic maniacs, BUT you must not tolerate real lies.
+If the claim feels "off" or "spinny", reject it.
 """
 
 JURY_SYSTEM_PROMPT = """
@@ -142,21 +135,20 @@ class Agent:
         {other_opinions}
         
         INSTRUCTIONS:
-        - Analyze the disagreement (if any).
-        - If others disagree with you:
-            - Can you prove them wrong? Point out their specific logical error. (e.g., "The Fact-Checker is being too literal...")
-            - Did they find a detail you missed? If so, ADMIT IT and change your verdict.
-        - If everyone agrees:
-            - Reinforce the strongest piece of evidence shared by the group.
+        - ATTACK the others if they are wrong.
+        - Don't be polite. Be correct.
+        - If the Fact-Checker missed a tiny detail, SHAME them.
+        - If the Skeptic is being paranoid, CALL THEM OUT.
+        - If you realize you were wrong, admit it, but otherwise STAND YOUR GROUND.
         
         ROLE GUIDANCE:
-        - Skeptic: Attack "Common Sense" arguments that ignore specific errors.
-        - Fact-Checker: Attack vague arguments. Numbers must match.
-        - Common Sense: Attack "Skeptic" arguments that are technically true but practically irrelevant.
+        - Skeptic: Assuming the worst. Why are the others so naive?
+        - Fact-Checker: The others are sloppy. Precision is everything.
+        - Common Sense: The others are robots. What does the text actually MEAN?
         
         Output:
         - Updated Verdict: [Faithful / Mutated]
-        - Argument: [Direct response to specific agents, citing their names]
+        - Argument: [Direct, forceful response]
         """
         
         messages = [
