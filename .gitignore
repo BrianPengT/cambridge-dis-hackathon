@@ -1,3 +1,7 @@
+# API Keys and sensitive files
+api_key.txt
+.env
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
