@@ -84,6 +84,8 @@ For mathematical claims that are open lower or upper bounds, consider practical 
 
 For example, if a claim states "at least 30" for a quantity that is actually 1000000, it may mislead readers to underestimate the scale. However, if a claim states "more than 850" for a quantity that is 870, it is still ok. The key is to consider the relative difference.
 
+Don't be overly pedantic, but don't tolerate lies.
+
 Output:
 - Verdict: Faithful / Mutated
 - Reason: plain language explanation
