@@ -1,0 +1,4 @@
+1. Does the truth implie the claim?
+2. Does the claim capture the important information in the truth?
+3. Does the claim contain information not contained in the truth?
+4. If the statements involve methematical expressions
