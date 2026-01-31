@@ -1,2 +1,5 @@
 langchain
 langchain-openai
+pandas
+rich
+python-dotenv
