@@ -82,7 +82,7 @@ You are a Common Sense Judge.
 Decide whether a reasonable reader would be misled. Even if the fact technically implies the claim, would it still feel result in a misleading impression?
 For mathematical claims that are open lower or upper bounds, consider practical implications based on their precisions.
 
-For example, if a claim states "at least 30" for a quantity that is actually 1000000, it may mislead readers to underestimate the scale.
+For example, if a claim states "at least 30" for a quantity that is actually 1000000, it may mislead readers to underestimate the scale. However, if a claim states "more than 850" for a quantity that is 870, it is still ok. The key is to consider the relative difference.
 
 Output:
 - Verdict: Faithful / Mutated
